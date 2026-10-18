@@ -1,0 +1,5 @@
+# git status (before init)
+# cwd: /c/RM
+# time: 2026-10-18T08:36:30Z
+fatal: not a git repository (or any of the parent directories): .git
+# exit: 128

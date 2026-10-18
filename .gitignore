@@ -1,0 +1,41 @@
+# 训练产物（体积大、可重跑，不入版本库）
+app/runs/
+*.pt
+*.pth
+*.onnx
+
+# 规则手册抽取出的文本（可由 PDF 重新生成）
+rules/rules_text/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# 虚拟环境 / conda
+env/
+venv/
+.venv/
+
+# 临时目录（本机调试时用过）
+.bashtmp/
+.piptmp/
+.pipcache/
+
+# 编辑器 / 系统
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# 大体积原始资料：官方规则 PDF 体积较大（3~12MB 多个）
+# 建议按队伍情况决定是否入库；默认忽略，改为在 README 记录来源链接。
+# 若你们希望连手册一起版本化，把下面两行注释掉即可。
+*.pdf
+
+# 第三方大资产：只读参考，不入库（third_party 约 369MB；practice 含网格资产）
+third_party/
+practice/

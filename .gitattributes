@@ -1,0 +1,55 @@
+# 行尾与文件类型规范
+#
+# 为什么需要这个文件：
+#   项目在 Windows 上开发、在 Ubuntu 上部署。若 git 的 core.autocrlf=true（Windows 默认），
+#   shell 脚本会被检出成 CRLF 行尾，在 Ubuntu 上执行时直接失败：
+#       bash: ./setup_env.sh: /bin/bash^M: bad interpreter: No such file or directory
+#   下面的规则强制 shell 脚本永远用 LF，从根上避免这类问题。
+
+# 默认：交给 git 自动判断
+* text=auto
+
+# ---- Shell 脚本必须 LF（在 Linux 上执行） ----
+*.sh        text eol=lf
+*.bash      text eol=lf
+*.zsh       text eol=lf
+
+# ---- Python 用 LF（跨平台都能跑，统一为 LF） ----
+*.py        text eol=lf
+
+# ---- Markdown / 文本用 LF ----
+*.md        text eol=lf
+*.txt       text eol=lf
+*.json      text eol=lf
+*.yaml      text eol=lf
+*.yml       text eol=lf
+*.toml      text eol=lf
+*.cfg       text eol=lf
+*.ini       text eol=lf
+
+# ---- PowerShell 用 CRLF（Windows 原生） ----
+*.ps1       text eol=crlf
+*.psm1      text eol=crlf
+
+# ---- 二进制：不做任何转换 ----
+*.pdf       binary
+*.png       binary
+*.jpg       binary
+*.jpeg      binary
+*.gif       binary
+*.npy       binary
+*.npz       binary
+*.pt        binary
+*.pth       binary
+*.onnx      binary
+*.sqlite    binary
+*.7z        binary
+*.zip       binary
+
+# ---- 训练产物不进版本库（体积大、可重跑） ----
+runs/**     export-ignore
+rules_text/** export-ignore
+
+# ---- GitHub 语言统计：把抽取出来的规则文本排除，避免误判仓库语言 ----
+rules_text/*.json linguist-generated=true
+runs/**           linguist-generated=true

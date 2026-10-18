@@ -1,0 +1,17 @@
+# M0 environment info
+# time: 2026-10-18T08:36:30Z
+# cwd: /c/RM
+# python: D:/Anaconda3/envs/rl/python.exe
+# MUJOCO_GL=<unset>
+
+python_version: 3.11.15 | packaged by Anaconda, Inc. | (main, Jun 11 2026, 15:12:53) [MSC v.1942 64 bit (AMD64)]
+platform: Windows-10-10.0.26100-SP0
+machine: AMD64
+numpy: 1.26.4
+torch: 2.11.0+cu128
+mujoco: 3.15.0
+gymnasium: 1.4.0
+PIL: 12.2.0
+torch_cuda_available: True
+torch_cuda_version: 12.8
+gpu: NVIDIA GeForce RTX 5070 Laptop GPU
